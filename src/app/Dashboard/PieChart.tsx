@@ -1,4 +1,3 @@
-// components/PieChart.tsx
 import { ChartData, ChartOptions } from 'chart.js/auto';
 import React from 'react';
 import { Pie } from 'react-chartjs-2';

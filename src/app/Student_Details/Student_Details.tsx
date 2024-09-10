@@ -48,7 +48,6 @@ const Student_Details: React.FC = () => {
             <input type="text" className="p-2 border rounded mb-2 w-full" />
             <label className="mb-2">Category:</label>
             <input type="text" className="p-2 border rounded mb-2 w-full" />
-            {/* Add more fields as needed */}
             </div>
             <div>
             <label className="mb-2">DOB:</label>
@@ -57,7 +56,6 @@ const Student_Details: React.FC = () => {
             <input type="text" className="p-2 border rounded mb-2 w-full" />
             <label className="mb-2">Aadhar Card No:</label>
             <input type="text" className="p-2 border rounded mb-2 w-full" />
-            {/* Add more fields as needed */}
             </div>
         </div>
 

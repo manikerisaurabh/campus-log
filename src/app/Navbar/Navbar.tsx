@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 const Navbar = () => {
+    
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const profileRef = useRef<HTMLDivElement>(null);

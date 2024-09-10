@@ -123,8 +123,8 @@ import {
 } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Dashboard from "../Dashboard/Dashboard";
-import Student_details from "../Student_Details/Student_Details";
+import Dashboard from "../dashboard/Dashboard";
+import Student_details from "../student_details/Student_Details";
 
 export function SidebarDemo() {
   const router = useRouter();
@@ -133,7 +133,7 @@ export function SidebarDemo() {
   const links = [
     {
       label: "Dashboard",
-      href: "/Dashboard",
+      href: "/dashboard",
       icon: <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
     },
     {
@@ -148,7 +148,7 @@ export function SidebarDemo() {
     },
     {
       label: "Student Details",
-      href: "/Student_Details",
+      href: "/student_details",
       icon: <IconFileCheck className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
     },
     {
@@ -202,8 +202,8 @@ export function SidebarDemo() {
           </SidebarBody>
         </Sidebar>
       </div>
-        {pathname === "/Dashboard" && <Dashboard />}
-        {pathname === "/Student_Details" && <Student_details />}
+        {pathname === "/dashboard" && <Dashboard />}
+        {pathname === "/student_details" && <Student_details />}
       </div>
   );
 }

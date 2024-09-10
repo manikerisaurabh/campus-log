@@ -49,7 +49,6 @@ const barChartData: ChartData<'bar'> = {
   ],
 };
 
-// Define separate options for PieChart and BarChart
 const pieChartOptions: ChartOptions<'pie'> = {
   responsive: true,
   maintainAspectRatio: false,
