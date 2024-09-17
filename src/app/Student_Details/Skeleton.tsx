@@ -60,7 +60,6 @@ const SkeletonLoader: React.FC = () => {
                 </div>
             </div>
 
-            {/* Skeleton for update button */}
             <div className="text-center">
                 <div className="bg-indigo-400 w-32 h-10 rounded mx-auto"></div>
             </div>

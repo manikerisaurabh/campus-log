@@ -7,6 +7,7 @@ interface PieChartProps {
   options?: ChartOptions<'pie'>;
 }
 
+
 const PieChart: React.FC<PieChartProps> = ({ data, options }) => {
   return <Pie data={data} options={options} />;
 };

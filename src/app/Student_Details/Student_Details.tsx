@@ -99,7 +99,6 @@ const Student_Details: React.FC = () => {
             </div>
         </div>
 
-        {/* Update Button */}
         <div className="text-center">
             <button className="bg-indigo-500 text-white px-6 py-2 rounded">Update</button>
         </div>
