@@ -364,7 +364,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Dashboard from "../dashboard/Dashboard";
-import Student_details from "../student_details/Student_Details";
+import Student_Details from "../student_details/Student_Details";
 
 export function SidebarDemo() {
   const router = useRouter();
@@ -431,7 +431,7 @@ export function SidebarDemo() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  });
 
   return (
     <div className="flex flex-row">
@@ -470,7 +470,7 @@ export function SidebarDemo() {
       {/* Main Content */}
       <div className="ml-auto">
         {pathname === "/dashboard" && <Dashboard />}
-        {pathname === "/student_details" && <Student_details />}
+        {pathname === "/student_details" && <Student_Details />}
       </div>
     </div>
   );
