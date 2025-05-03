@@ -51,7 +51,10 @@ export const onboardNewFacultyAction = async (data: FacultyData) => {
         });
         updateSubjectFacultyAction(data.subjects, result.faculty_id);
         console.log("result after crrateing faculty : ", result);
-        return result;
+        return {
+            success: true,
+            facultyId: result.faculty_id,
+        };
     } catch (error) {
         console.log("error in onboardNewFacultyAction : ", error);
         return {

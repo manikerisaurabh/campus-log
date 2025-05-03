@@ -99,6 +99,7 @@ const OnboardFacultyPage = () => {
     const [selectedDepartment, setSelectedDepartment] = useState<Department>();
     const [allSubjects, setallSubjects] = useState<Subject[]>()
     const [selectedSubjects, setSelectedSubjects] = useState<Subject[]>()
+    const [newFacultyId, setnewFacultyId] = useState<string>("");
     useEffect(() => {
         getAllDepartments();
         getAllSubjectss();
@@ -218,6 +219,7 @@ const OnboardFacultyPage = () => {
             const res = await onboardNewFacultyAction(facultyData);
             console.log("this is response after onboard faculty : ", res)
             setIsFacultySubmitted(true);
+            setnewFacultyId(res.facultyId ?? "");
             toast.success('Faculty onboarded successfully!');
         } catch (error) {
             toast.error('Failed to onboard faculty. Please try again.');
@@ -226,7 +228,7 @@ const OnboardFacultyPage = () => {
     };
 
     // Faculty Success Component
-    const FacultySuccess = () => (
+    const FacultySuccess: React.FC<{ newFacultyId: string }> = ({ newFacultyId }) => (
         <div className="min-h-screen  bg-gray-50 pt-20 pb-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8 text-center">
                 <motion.div
@@ -241,6 +243,7 @@ const OnboardFacultyPage = () => {
                 <p className="text-lg text-gray-600  mb-8">
                     {facultyData.firstName} {facultyData.lastName} has been successfully added to the system.
                 </p>
+                <strong>` Id : ${newFacultyId}`</strong>
                 <button
                     onClick={() => {
                         setIsFacultySubmitted(false);
@@ -300,7 +303,7 @@ const OnboardFacultyPage = () => {
     );
 
     // Early returns for success states
-    if (isFacultySubmitted) return <FacultySuccess />;
+    if (isFacultySubmitted) return <FacultySuccess newFacultyId={newFacultyId} />;
     if (isStudentSubmitted) return <StudentSuccess />;
 
     return (
@@ -859,7 +862,7 @@ const StudentOnboardForm = ({
                                 value={studentData.adharNO}
                                 onChange={handleInputChange}
                                 className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500  transition-all bg-white"
-                                placeholder="e.g. john@example.com"
+                                placeholder="e.g. 7878 4545 8585"
                                 required
                             />
 
@@ -1067,7 +1070,7 @@ const StudentOnboardForm = ({
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-black  mb-1">
-                                MCurrent Semester <span className="text-red-500">*</span>
+                                Current Semester <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -1075,7 +1078,7 @@ const StudentOnboardForm = ({
                                 value={studentData.currentSemister}
                                 onChange={handleInputChange}
                                 className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500  transition-all bg-white"
-                                placeholder="e.g. Mary Doe"
+                                placeholder="e.g. 8"
                                 required
                             />
                         </div>
@@ -1152,7 +1155,7 @@ const StudentOnboardForm = ({
                                 Password
                             </label>
                             <input
-                                type="text"
+                                type="password"
                                 name="password"
                                 value={studentData.password}
                                 onChange={handleInputChange}
